@@ -1,0 +1,22 @@
+@font-face {
+    font-family:"Nightmare Before Christmas";
+    src: url("./../fonts/Nightmare_Before_Christmas.ttf") format("truetype");
+}
+
+body {
+    font-family:"Nightmare Before Christmas" ;
+    background-image: url(/pictures/mrJack6.PNG);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vw;
+}
+
+h1 {
+    font-size: 4rem;
+    color: darkorange;
+    margin-left: 80%;
+}
+
+img {
+padding-top: 33%;
+}

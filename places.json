@@ -1,0 +1,26 @@
+[
+    {
+        "name": "oogie-boogie",
+        "title": "Oogie Boogie",
+        "cssFile": "oogie-boogie.css"
+    },
+
+    {
+        "name": "scary",
+        "title": "Scary place",
+        "cssFile": "scary.css"
+    },
+
+    {
+        "name": "origami",
+        "title": "Origami",
+        "cssFile": "origami.css"
+    },
+
+    {
+        "name": "christmas-town",
+        "title": "Christmas town",
+        "cssFile": "christmas-town.css"
+    }
+
+]

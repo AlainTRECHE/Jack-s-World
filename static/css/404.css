@@ -1,0 +1,36 @@
+body {
+
+    background-color: #F0F;
+    animation-name: strobo;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+h1 {
+
+    color: aqua;
+    font-size: 10rem;
+    text-align: center;
+    padding-top: 14%;
+}
+
+@keyframes strobo {
+
+    0% {
+
+        background-color: #F0F;
+    }
+
+    50% {
+
+        background-color: aqua;
+    }
+
+    100% {
+
+        background-color: #F0F;
+    }
+
+    
+}

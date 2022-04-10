@@ -1,0 +1,8 @@
+[
+    {
+        "name": "scary-faces",
+        "title": "Scary faces",
+        "cssFile": "scary-faces.css",
+        "jsFile": "scary-faces.js"
+    }
+]
