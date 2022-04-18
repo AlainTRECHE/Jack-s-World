@@ -5,7 +5,7 @@ const base = {
             born: "",
             job: "",
             equipements: [""],
-            link: "cardJack.PNG",
+            link: "../pictures/cardJack.PNG",
         },
 
         {
@@ -13,7 +13,7 @@ const base = {
             born: "",
             job: "",
             equipements: [""],
-            link: "cardBoogie.PNG",
+            link: "../pictures/cardBoogie.PNG",
         },
 
         {
@@ -21,7 +21,7 @@ const base = {
             born: "",
             job: "",
             equipements: [""],
-            link: "cardSally.PNG",
+            link: "../pictures/cardSally.PNG",
         },
 
         {
@@ -29,7 +29,7 @@ const base = {
             born: "",
             job: "",
             equipements: [""],
-            link: "cardMayor.PNG",
+            link: "../pictures/cardMayor.PNG",
         },
 
         {
@@ -37,7 +37,111 @@ const base = {
             born: "",
             job: "",
             equipements: [""],
-            link: "cardDrFlinklestein.PNG",
+            link: "../pictures/cardDrFlinklestein.PNG",
+        },
+
+        {
+            pseudo: "Zero",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardZero.PNG",
+        },
+
+        {
+            pseudo: "Barrel",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardBarrel.PNG",
+        },
+
+        {
+            pseudo: "Lock",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardLock.PNG",
+        },
+
+        {
+            pseudo: "Shock",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardShock.PNG",
+        },
+
+        {
+            pseudo: "Clown",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardClown.PNG",
+        },
+
+        {
+            pseudo: "Corpse Kid",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardCorpseKid.PNG",
+        },
+
+        {
+            pseudo: "Harlequin Demon",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardHarlequinDemon.PNG",
+        },
+
+        {
+            pseudo: "Undersea Gal",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardUnderseaGal.PNG",
+        },
+
+        {
+            pseudo: "Behemoth",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardBehemoth.PNG",
+        },
+
+        {
+            pseudo: "Mr Hyde",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardMrHyde.PNG",
+        },
+
+        {
+            pseudo: "Sax Player",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardSaxPlayer.PNG",
+        },
+
+        {
+            pseudo: "Vampire",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardVampire.PNG",
+        },
+
+        {
+            pseudo: "Wolfman",
+            born: "",
+            job: "",
+            equipements: [""],
+            link: "../pictures/cardUnderseaGal.PNG",
         },
     ],
 };
@@ -60,7 +164,7 @@ for (let i = 0; i < numberOfStudents; i++) {
 <div class="card">
     <div class="recto">
         <div class="container">
-            <img src="./01.revision.assets/${base.students[i].link}">
+            <img src="${base.students[i].link}">
             <div class="overlay"></div>
             <h1>${base.students[i].pseudo}</h1>
         </div>
