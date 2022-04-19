@@ -2,18 +2,22 @@
     font-family:"Nightmare Before Christmas";
     src: url("./../fonts/Nightmare_Before_Christmas.ttf") format("truetype");
 }
+
+html {
+    background-color: black;
+}
  
 body {
 
     font-family:"Nightmare Before Christmas" ;
 }
 
-#avengers {
+#characters {
     display: flex;
     flex-wrap: wrap;
 }
 
-.avenger {
+.character {
     background-color:transparent;
     width: 300px;
     height: 400px;
@@ -29,7 +33,7 @@ body {
     transform-style: preserve-3d;
 }
 
-.avenger.hovered .card {
+.character.hovered .card {
     transform: rotateY(180deg);
 }
 

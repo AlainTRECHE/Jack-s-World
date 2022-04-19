@@ -1,199 +1,143 @@
 const base = {
-    students: [
+    characters: [
         {
             pseudo: "Jack Skellington",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardJack.PNG",
         },
 
         {
             pseudo: "Ooogie Boogie",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardBoogie.PNG",
         },
 
         {
             pseudo: "Sally",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardSally.PNG",
         },
 
         {
             pseudo: "Mayor",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardMayor.PNG",
         },
 
         {
             pseudo: "Dr Flinklestein",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardDrFlinklestein.PNG",
         },
 
         {
             pseudo: "Zero",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardZero.PNG",
         },
 
         {
             pseudo: "Barrel",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardBarrel.PNG",
         },
 
         {
             pseudo: "Lock",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardLock.PNG",
         },
 
         {
             pseudo: "Shock",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardShock.PNG",
         },
 
         {
             pseudo: "Clown",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardClown.PNG",
         },
 
         {
             pseudo: "Corpse Kid",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardCorpseKid.PNG",
         },
 
         {
             pseudo: "Harlequin Demon",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardHarlequinDemon.PNG",
         },
 
         {
             pseudo: "Undersea Gal",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardUnderseaGal.PNG",
         },
 
         {
             pseudo: "Behemoth",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardBehemoth.PNG",
         },
 
         {
             pseudo: "Mr Hyde",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardMrHyde.PNG",
         },
 
         {
             pseudo: "Sax Player",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardSaxPlayer.PNG",
         },
 
         {
             pseudo: "Vampire",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardVampire.PNG",
         },
 
         {
             pseudo: "Wolfman",
-            born: "",
-            job: "",
-            equipements: [""],
+            story: "",
             link: "../pictures/cardUnderseaGal.PNG",
         },
     ],
 };
 
-const numberOfStudents = base.students.length;
-for (let i = 0; i < numberOfStudents; i++) {
-    //créer une variable qui contient le tableau des equipements
-    const equipementOfStudent = base.students[i].equipements;
-    //compter le nombre d'equipements de l'etudiant ciblé (i)
-    const numberOfEquipement = equipementOfStudent.length;
-    //créer le nombre de li necessaire (autant que d'equipement)
-    let listEquipementElement = "";
-    for (let j = 0; j < numberOfEquipement; j++) {
-        listEquipementElement += `<li>${equipementOfStudent[j]}</li>`;
-    }
-    console.log(listEquipementElement);
-    const studentCardElement = `    
+const numberOfcharacters = base.characters.length;
+for (let i = 0; i < numberOfcharacters; i++) {
+  
+    const characterCardElement = `    
 
-<div class="avenger">
-<div class="card">
-    <div class="recto">
-        <div class="container">
-            <img src="${base.students[i].link}">
-            <div class="overlay"></div>
-            <h1>${base.students[i].pseudo}</h1>
-        </div>
+<div class="character">
+    <div class="card">
+        <div class="recto">
+            <div class="container">
+                <img src="${base.characters[i].link}">
+                <div class="overlay"></div>
+                 <h1>${base.characters[i].pseudo}</h1>
+             </div>
+            </div>
+        <div class="verso">
+        <h2>${base.characters[i].pseudo}</h2>
+        <div>Story :${base.characters[i].story} </div>
+       </div>
     </div>
-    <div class="verso">
-        <h2>${base.students[i].pseudo}</h2>
-
-        <!-- TEMPLATE DE CODE POUR UN SUPER ETUDIANT -->
-
-        <!-- FIN TEMPLATE DE CODE POUR UN SUPER ETUDIANT -->
-
-        <div>Année de création :${base.students[i].born} </div>
-        <div>Métier : ${base.students[i].job}</div>
-        <div class="array-equipement">
-            Équipement :
-            <ul class="array">${listEquipementElement}</ul>
-        </div>
-    </div>
-</div>
 </div>
 `;
-    const parentAvenger = document.querySelector("#avengers");
-    // parentAvenger.innerHTML = studentCardElement;
-    parentAvenger.insertAdjacentHTML("beforeend", studentCardElement);
+    const parentCharacter = document.querySelector("#characters");
+    parentCharacter.insertAdjacentHTML("beforeend", characterCardElement);
 }
 
 
-//je recupere un objet qui contient toutes les cartes d'etudiant
-const cardsElements = document.querySelectorAll(".avenger");
+//je recupere un objet qui contient toutes les cartes des personnages
+const cardsElements = document.querySelectorAll(".character");
 
 cardsElements.forEach((card) => {
     card.addEventListener("mouseenter", () => {
@@ -205,36 +149,3 @@ cardsElements.forEach((card) => {
 }); //fin du foreach
 
 
-//je recupere l'input submit
-const buttonElement = document.querySelector("#button");
-console.log(buttonElement);
-//j'ecoute l'event du button (click)
-buttonElement.addEventListener("click", (event) => {
-    //je recupere le contenu de l'input text
-    //en annulant le comportement par defaut
-    event.preventDefault();
-    let searchedText = document.querySelector("#inputsearch").value;
-    console.log(searchedText);
-});
-
-function processAndDisplayHeroesCards(text) {
-    //je cree un tableau vide
-    let studentsFound = [];
-    //l'utilisateur recherche "Hul"
-    //je parcours tout les pseudo dans le tableau students POUR CHAQUE etudiant
-    base.students.forEach((student) => {
-        const studentPseudo = student.pseudo;
-
-        if (studentPseudo.includes("a")) {
-            studentsFound.push(student);
-        }
-    });
-    console.log(studentsFound);
-
-    //      je lis son pseudo
-
-    //      si le pseudo contient un "Hul"
-
-    //      alors j'affiche la carte qui contient "Hul"
-}
-processAndDisplayHeroesCards("text");
