@@ -15,17 +15,32 @@ function createAndMoveDice() {
 
 function playGame(howManyDices) {
 
-    var howManyDices = parseInt(prompt("combien de dés?"))
-    // il me met toujours un dés de plus ???
+    var howManyDices = document.querySelector("#dices");
+    var diceCount = howManyDices.value;
 
-    for (let i = 0; i < howManyDices; i++) {
-console.log(howManyDices,i);
+    for (let i = 0; i < diceCount; i++) {
+
         createAndMoveDice("player");
 
     }
 }
 
+function updateHowManyDices() {
+    var howManyDices = document.querySelector("#dices");
+    var howManyValue = howManyDices.value;
+    
+   
+    var howManyDicesValue = document.querySelector("#submit");
+    howManyDicesValue.textContent = howManyValue;
+}
 
+var rollDiceButtonElement = document.querySelector("#roll-dice-button");
+rollDiceButtonElement.addEventListener("click", playGame);
+
+
+var howManyDices = document.querySelector("#dices");
+howManyDices.addEventListener("input", updateHowManyDices);
+howManyDices.addEventListener("input", playGame);
 
 
 playGame();
