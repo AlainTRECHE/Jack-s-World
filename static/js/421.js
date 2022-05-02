@@ -15,8 +15,8 @@ function createAndMoveDice() {
 
 function playGame(howManyDices) {
 
-    var howManyDices = document.querySelector("#dices");
-    var diceCount = howManyDices.value;
+const diceCount = howManyDices;
+
 
     for (let i = 0; i < diceCount; i++) {
 
@@ -25,22 +25,12 @@ function playGame(howManyDices) {
     }
 }
 
-function updateHowManyDices() {
-    var howManyDices = document.querySelector("#dices");
-    var howManyValue = howManyDices.value;
-    
-   
-    var howManyDicesValue = document.querySelector("#submit");
-    howManyDicesValue.textContent = howManyValue;
-}
-
-var rollDiceButtonElement = document.querySelector("#roll-dice-button");
-rollDiceButtonElement.addEventListener("click", playGame);
+const buttonSubmitElement = document.querySelector("#submit");
+const inputSubmitElement = document.querySelector("#dices");
+buttonSubmitElement.addEventListener("click",function(event){
+    event.preventDefault();
+    const nbDices = parseInt(inputSubmitElement.value);
+    playGame(nbDices);
+});
 
 
-var howManyDices = document.querySelector("#dices");
-howManyDices.addEventListener("input", updateHowManyDices);
-howManyDices.addEventListener("input", playGame);
-
-
-playGame();
