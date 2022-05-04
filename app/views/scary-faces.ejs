@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/scary-faces.css">
+    <title>Scary faces</title>
+</head>
+
+<body>
+    <div id="characters">
+        <div class="character">
+            <div class="card">
+                <div class="recto">
+                    <div class="container">
+                        <img src=<%= character.picture  %> >
+                        <div class="overlay"></div>
+                         <h1><%= character.name %></h1>
+                     </div>
+                    </div>
+                <div class="verso">
+                <h2><%= character.name %></h2>
+                <div><%= character.description %></div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="/js/scary-faces.js"></script>
+
+</body>
+
+</html>

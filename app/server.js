@@ -8,7 +8,7 @@ const server = express();
 
 // définition d'EJS comme moteur de rendu de notre serveur
 server.set("view engine", "ejs");
-server.set("views", "views");
+server.set("views", "app/views");
 server.use(express.static("static"));
 
 // compteur de visites
