@@ -3,20 +3,27 @@ const express = require("express");
 const router = express.Router();
 
 const mainController = require("./controllers/mainController");
-//const placeController = require("./controllers/placeController");
-//const boogieController = require("./controllers/boogieController";)
-//const scaryFacesController = require("./controllers/scaryFacesController");
+const placeController = require("./controllers/placeController");
+const boogieController = require("./controllers/boogieController");
+const scaryFacesController = require("./controllers/scaryFacesController");
+const diceController = require("./controllers/421Controller");
+const origamiController = require("./controllers/origamiController");
+const christmasContoller = require("./controllers/christmasController");
+
 
 router.get("/", mainController.index);
-//router.get("/:name", placeController.mainRoad);
-//router.get("/oogie-boogie/:name", boogieController.getPath);
-//router.get("/scary/:name", scaryFacesController.scaryFaces);
+router.get("/scary", placeController.mainRoad);
+router.get("/scary/scary-faces", scaryFacesController.scaryFaces);
+router.get("/oogie-boogie", boogieController.getPath);
+router.get("/oogie-boogie/421", diceController.getPath);
+router.get("/origami", origamiController.getPath);
+router.get("/christmas-town", christmasContoller.getPath);   
 
 // gestion 404
 router.use(function(req,res){
     res.status(404);
     res.render("page404");
-});
+}); 
 
 
 module.exports = router;

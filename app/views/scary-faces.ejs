@@ -9,13 +9,14 @@
     <title>Scary faces</title>
 </head>
 
-<body>
+<body> 
+    <% for ( const character of characters ) {%> 
     <div id="characters">
         <div class="character">
             <div class="card">
                 <div class="recto">
                     <div class="container">
-                        <img src=<%= character.picture  %> >
+                        <img src=/pictures/<%= character.picture  %> >
                         <div class="overlay"></div>
                          <h1><%= character.name %></h1>
                      </div>
@@ -27,7 +28,7 @@
             </div>
         </div>
     </div>
-
+<% } %> 
     
 
     <script src="/js/scary-faces.js"></script>
