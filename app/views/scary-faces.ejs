@@ -10,8 +10,9 @@
 </head>
 
 <body> 
-    <% for ( const character of characters ) {%> 
+    
     <div id="characters">
+        <% for ( const character of characters ) {%> 
         <div class="character">
             <div class="card">
                 <div class="recto">
@@ -27,9 +28,10 @@
                </div>
             </div>
         </div>
+        <% } %>
     </div>
-<% } %> 
-    
+
+       
 
     <script src="/js/scary-faces.js"></script>
 

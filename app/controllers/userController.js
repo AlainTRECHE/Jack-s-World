@@ -1,120 +1,80 @@
+const assert = require("assert");
 const bcrypt = require("bcrypt");
-const emailValidator = require("email-validator");
-const { User } = require("../models/index");
+
+const { User } = require("../models");
 
 const userController = {
-    getRegisterPage(req, res) {
-        res.render("register");
+    // SIGN UP => 2 ACTIONS : affichage du forulaire et soumission du formulaire
+    getSignup: (req, res) => {
+        res.render("signup");
     },
+    doSignup: async (req, res) => {
+        // Est-ce que username déjà pris ?
+        // Si oui -> Erreur
+        // Sinon -> Je continue
+        try {
+            const user = await User.findOne({
+                where: {
+                    username: req.body.username
+                }
+            });
 
-    getLoginPage(req, res) {
+            console.log(user);
+
+            // Je verifie que la condition est vrai sinon crashdown !
+            assert.ok(user == null, `User ${req.body.username} already exists`);
+
+          
+            const encryptedPwd = await bcrypt.hash(req.body.password, 10);
+
+            const newUser = new User({
+                username: req.body.username,
+                password: encryptedPwd
+            });
+
+            await newUser.save();
+
+            res.redirect("/user/login");
+
+        } catch(err) {
+            console.error(err);
+            res.send(err.message);
+        }
+    },
+    // LOGIN -> 2 ACTIONS
+    getLogin: (req, res) => {
         res.render("login");
     },
+    doLogin: async (req, res) => {
+        // ETAPE 1 : Est-ce que j'ai user ?
+        const user = await User.findOne({ where: { username: req.body.username }});
 
-    async register(req, res) {
-        try {
-            const { firstname, lastname, email, password, passwordConfirm } =
-                req.body;
+        if(user) {
+            // ETAPE 2 : Est-ce que le mdp colle ?
+            if(await bcrypt.compare(req.body.password, user.password)) {
 
-            // Email doit etre un email
-            if (!emailValidator.validate(email)) {
-                res.render("register", {
-                    error: "Votre courriel est invalide",
-                });
-            }
-
-            // password !== passwordConfirm
-            // Si le mot de passe doit suivre des recommandations, on les vérifie aussi
-            // Si le mot de passe doit contenir des caracteres speciaux
-            // Si il doit avoir une longueur minimale
-            if (password !== passwordConfirm) {
-                res.render("register", {
-                    error: "Les mots de passe ne sont pas identiques",
-                });
-            }
-
-            // Vérifier si user existe déja en BDD
-            const exists = await User.findOne({
-                where: { email: email },
-            });
-
-            if (exists) {
-                res.render("register", { error: "L'utilisateur existe déjà" });
-            }
-
-            // Chiffrage mot de passe
-            // générer le sel
-            const salt = await bcrypt.genSalt(10);
-            const hash = await bcrypt.hash(password, salt);
-
-            // Un fois qu'on a le MDP, on peut instancier user :)
-            const user = new User({
-                firstname: firstname,
-                lastname: lastname,
-                email: email,
-                password: hash,
-            });
-
-            // Quand on a une instance de User, on peut sauvegarder dans la BDD
-            await user.save();
-
-            res.redirect("login");
-        } catch (error) {
-            // récupérer les erreurs de validation et renvoyez
-            // ces erreur comme infomation à l'utilisateur
-            // sur la page register
-            console.error(error);
-        }
-    },
-
-    async login(req, res) {
-        try {
-            const { email, password } = req.body;
-
-            // Si le mot de passe doit suivre des recommandations, on les vérifie aussi
-            // Si le mot de passe doit contenir des caracteres speciaux
-            // Si il doit avoir une longueur minimale
-
-            if (!emailValidator.validate(email)) {
-                res.render("login", { error: "Le courriel est invalide" });
-            }
-
-            // on va vérifier si user avec email existe
-            const user = await User.findOne({
-                where: { email: email },
-            });
-
-            let ok = false;
-            if (user) {
-                // verif mot de passe
-                ok = await bcrypt.compare(password, user.password);
-            }
-
-            if (ok) {
-                delete user.dataValues.password;
-
-                // Si tout va bien on fait une session
+                // ETAPE 3 je crée la session
                 req.session.user = user;
 
-                return res.redirect("/");
+                res.redirect("/");
+            } else {
+                res.send("Nope wrong username or password");
             }
-
-            res.render("login", { error: "Something went wrong" });
-        } catch (error) {
-            console.error(error);
+        } else {
+            res.send("Nope wrong username or password");
         }
     },
-
-    // Tom dit verif dans la route : ok !
-    profile(req, res) {
+    // LOGOUT -> 1 ACTION
+    logout: (req, res) => {
+        // Je détruis "le casier" pour déconnecter l'utilisateur
+        req.session.destroy();
+    },
+    // PROFILE -> 1ACTION
+    profile: (req, res) => {
         res.render("profile");
     },
 
-    logout(req, res) {
-        req.session.user = false;
 
-        res.redirect("/");
-    },
 };
 
 module.exports = userController;

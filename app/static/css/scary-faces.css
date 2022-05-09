@@ -54,6 +54,7 @@ body {
     background-color: darkorange;
     color: white;
     transform: rotateY(180deg);
+    font-size: 1.5rem;
 }
 
 

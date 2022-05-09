@@ -12,7 +12,27 @@ server.set("view engine", "ejs");
 server.set("views", "app/views");
 server.use(express.static("app/static"));
 
-// compteur de visites 
+// Permet de lire le body des POST
+server.use(express.urlencoded({ extended: true }));
+
+// importer la bibliotheque express-session
+const session = require("express-session");
+/*const userMiddleware = require("../app/middlewares/user");
+// on configure les sessions
+server.use(session({
+    // même si req.session est vide je crée "le casier"
+    saveUninitialized: true,
+    // a toutes les requetes je recrée le token dans les cookies
+    resave: true,
+    // le secret sert de point de départ unique pour généré la "clef de session"
+    secret: process.env.SESSION_SECRET || "Change ME or get hacked"
+
+}));
+
+server.use(userMiddleware);*/
+
+
+// compteur de visites
 let compteurVisite = 0;
 server.use((request, response, next) => {
 
@@ -31,7 +51,7 @@ server.use(router);
 
 // définition des paramèteres du serveur
 const PORT = process.env.PORT || 7000;
-const URL = "http://localhost:"; 
+const URL = "http://localhost:";
 
 // paramètrage du serveur
 server.set("port", PORT);

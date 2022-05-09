@@ -15,7 +15,7 @@ function createAndMoveDice() {
 
 function playGame(howManyDices) {
 
-const diceCount = howManyDices;
+    const diceCount = howManyDices;
 
 
     for (let i = 0; i < diceCount; i++) {

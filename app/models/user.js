@@ -1,30 +1,30 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-const sequelize = require("./getConnexion")();
+const { Model, DataTypes } = require("sequelize");
 
-class User extends Model {
-    getFullName() {
-        return this.firstname + " " + this.lastname;
-    }
-}
+const sequelize = require("../database");
 
-User.init(
-    {
-        email: DataTypes.TEXT,
-        password: DataTypes.TEXT,
-        firstname: DataTypes.STRING,
-        lastname: DataTypes.STRING,
-        role: DataTypes.STRING,
-        fullname: {
-            type: DataTypes.VIRTUAL,
-            get() {
-                return `${this.firstname} ${this.lastname}`;
-            },
-        },
+
+class User extends Model {}
+
+User.init({
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
     },
-    {
-        sequelize: sequelize,
-        tableName: "user",
+    username: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+        unique: true,
+    },
+    password: {
+        type: DataTypes.STRING(255),
+        allowNull: false
     }
-);
+}, {
+
+    sequelize
+});
+
 
 module.exports = User;
