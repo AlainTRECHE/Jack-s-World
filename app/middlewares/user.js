@@ -1,13 +1,12 @@
-const { User } = require("../models");
+const { User } = require("../models/user");
 
 const userMiddleware = (req, res, next) => {
-    if(req.session.user) { 
+    if(req.session.user) {
         res.locals.user = req.session.user;
     } else {
         res.locals.user = false;
     }
     next();
 };
-
 
 module.exports = userMiddleware;

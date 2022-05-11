@@ -1,7 +1,7 @@
 const assert = require("assert");
 const bcrypt = require("bcrypt");
 
-const { User } = require("../models");
+const { User } = require("../models/user");
 
 const userController = {
     // SIGN UP => 2 ACTIONS : affichage du forulaire et soumission du formulaire
@@ -24,7 +24,7 @@ const userController = {
             // Je verifie que la condition est vrai sinon crashdown !
             assert.ok(user == null, `User ${req.body.username} already exists`);
 
-          
+
             const encryptedPwd = await bcrypt.hash(req.body.password, 10);
 
             const newUser = new User({

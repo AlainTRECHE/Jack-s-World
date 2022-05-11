@@ -17,7 +17,8 @@ server.use(express.urlencoded({ extended: true }));
 
 // importer la bibliotheque express-session
 const session = require("express-session");
-/*const userMiddleware = require("../app/middlewares/user");
+const userMiddleware = require("../app/middlewares/user.js");
+
 // on configure les sessions
 server.use(session({
     // même si req.session est vide je crée "le casier"
@@ -29,7 +30,7 @@ server.use(session({
 
 }));
 
-server.use(userMiddleware);*/
+server.use(userMiddleware);
 
 
 // compteur de visites

@@ -9,7 +9,7 @@ const scaryFacesController = require("./controllers/scaryFacesController");
 const diceController = require("./controllers/421Controller");
 const origamiController = require("./controllers/origamiController");
 const christmasContoller = require("./controllers/christmasController");
-
+const userController = require("./controllers/userController");
 
 router.get("/", mainController.index);
 router.get("/scary", placeController.mainRoad);
@@ -19,7 +19,7 @@ router.get("/oogie-boogie/421", diceController.getPath);
 router.get("/origami", origamiController.getPath);
 router.get("/christmas-town", christmasContoller.getPath);
 
-/*// SIGN UP
+// SIGN UP
 router.get("/signup", userController.getSignup);
 router.post("/signup", userController.doSignup);
 
@@ -27,11 +27,11 @@ router.post("/signup", userController.doSignup);
 router.get("/login", userController.getLogin);
 router.post("/login", userController.doLogin);
 
-// LOGOUT
+// LOGOUT 
 router.get("/logout", userController.logout);
 
 // PROFILE
-router.get("/profile", userController.profile);*/
+router.get("/profile", userController.profile);
 
 
 // gestion 404
