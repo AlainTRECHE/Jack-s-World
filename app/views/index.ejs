@@ -17,34 +17,62 @@
     
 
     <div class="menu">
+        <button class="trigger">SE CONNECTER</button>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div id="Content" class="container">
+                    <div class="row padding">
+                        <div class="col span_24">
+                            <form method="POST">
+                                <div >
+                                    <input class="username" id="username" name="username" placeholder="username" />
+                                    <label class="label" for="username">Username</label>
+                                </div>
+                                <div>
+                                    <input class="password" id="password" type="password" name="password" placeholder="password" />
+                                    <label class="label" for="password">Password</label>
+                                </div>
+                                <div class="connect">
+                                    <button class="submit" type="submit">Se connecter</button>
+                                    <a class="signup" href="/signup">Je n'ai pas de compte</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
         <nav>
             <div class="link-picture">
+                <div class="pumpkins-links">
             <a href="/oogie-boogie">
                 <img src="/pictures/citrouille1.PNG" alt="lien citrouille vers Oogie Boogie">
             </a>
+                </div>
+                <div class="pumpkins-links">
             <a href="/scary">
                 <img src="/pictures/citrouille2.PNG" alt="lien citrouille vers Scary place">
             </a>
+                </div>
+                <div class="pumpkins-links">
             <a href="/origami">
                 <img src="/pictures/citrouille3.PNG" alt="lien citrouille vers Origami">
             </a>
+                </div>
+                <div class="pumpkins-links">
             <a href="/christmas-town">
                 <img src="/pictures/citrouille4.PNG" alt="lien citrouille vers Christmas town">
             </a>
+                </div>
             <a class="connect" href="/signup">se connecter</a>
 
             </div>
         </nav>
-    </div>
+    
 
-    <button class="trigger">Click here to trigger the modal!</button>
-<div class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h1>Hello, I am a modal!</h1>
-    </div>
+  
 </div>
-
 <script src="/js/home.js"></script>
 
 </body>

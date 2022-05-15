@@ -24,10 +24,10 @@ router.get("/signup", userController.getSignup);
 router.post("/signup", userController.doSignup);
 
 // LOGIN
-router.get("/login", userController.getLogin);
-router.post("/login", userController.doLogin);
+router.get("/", userController.getLogin);
+router.post("/", userController.doLogin);
 
-// LOGOUT 
+// LOGOUT  
 router.get("/logout", userController.logout);
 
 // PROFILE

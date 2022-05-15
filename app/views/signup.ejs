@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
     <title>Signup</title>
 </head>
 <body>
+
     <div id="Content" class="container">
         <div class="row padding">
-            <div class="col span_24">
+            <div class="signup">
                 <form method="POST">
                     <div>
-                        <input id="username" name="username" placeholder="username" />
-                        <label for="username">Username</label>
+                        <input class="input" id="username" name="username" placeholder="username" />
+                        <label class="label" for="username">Username</label>
                     </div>
                     <div>
-                        <input id="password" type="password" name="password" placeholder="password" />
-                        <label for="password">Password</label>
+                        <input class="input" id="password" type="password" name="password" placeholder="password" />
+                        <label class="label" for="password">Password</label>
                     </div>
                     <div>
-                        <button type="submit">S'enregistrer</button>
-                        <a href="/login">J'ai déjà un compte</a>
+                        <button class="submit" type="submit">S'enregistrer</button>
+                        <a class="link" href="/login">J'ai deja un compte</a>
                     </div>
                 </form>
             </div>
