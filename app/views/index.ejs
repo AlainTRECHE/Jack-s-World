@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/reset.css">
@@ -9,28 +10,29 @@
 </head>
 
 
-<body >
+<body>
     <div class="movie-poster">
         <h1>Jack's World</h1>
     </div>
 
-    
 
-    <div class="menu">
+<div class="menu">
+    
         <button class="trigger">SE CONNECTER</button>
         <div class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <div id="Content" class="container">
+                <div class="container">
                     <div class="row padding">
                         <div class="col span_24">
                             <form method="POST" action="/login">
-                                <div >
+                                <div>
                                     <input class="username" id="username" name="username" placeholder="username" />
                                     <label class="label" for="username">Username</label>
                                 </div>
                                 <div>
-                                    <input class="password" id="password" type="password" name="password" placeholder="password" />
+                                    <input class="password" id="password" type="password" name="password"
+                                        placeholder="password" />
                                     <label class="label" for="password">Password</label>
                                 </div>
                                 <div class="connect">
@@ -39,41 +41,80 @@
                                 </div>
                             </form>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
-        <nav>
-            <div class="link-picture">
-                <div class="pumpkins-links">
-            <a href="/oogie-boogie">
-                <img src="/pictures/citrouille1.PNG" alt="lien citrouille vers Oogie Boogie">
-            </a>
-                </div>
-                <div class="pumpkins-links">
-            <a href="/scary">
-                <img src="/pictures/citrouille2.PNG" alt="lien citrouille vers Scary place">
-            </a>
-                </div>
-                <div class="pumpkins-links">
-            <a href="/origami">
-                <img src="/pictures/citrouille3.PNG" alt="lien citrouille vers Origami">
-            </a>
-                </div>
-                <div class="pumpkins-links">
-            <a href="/christmas-town">
-                <img src="/pictures/citrouille4.PNG" alt="lien citrouille vers Christmas town">
-            </a>
-                </div>
-            <a class="connect" href="/signup">se connecter</a>
 
+        
+            <button class="trigger2">S'ENREGISTRER</button>
+            <div class="modal2">
+            <div class="modal-content2">
+                <span class="close-button2">&times;</span>
+                <div class="container2">
+                    <div class="row padding">
+                        <div class="col span_24">
+                           
+                                <form method="POST" action="/signup">
+                                    <div>
+                                        <input class="input" id="username2" name="username" placeholder="username" />
+                                        <label class="label" for="username">Username</label>
+                                    </div>
+                                    <div>
+                                        <input class="input" id="password2" type="password" name="password"
+                                            placeholder="password" />
+                                        <label class="label" for="password">Password</label>
+                                    </div>
+                                    <div>
+                                        <button class="submit" type="submit">S'enregistrer</button>
+                                        <a class="link" href="/login">J'ai deja un compte</a>
+                                    </div>
+                                </form>
+                            
+                        </div>
+                    </div>
+                </div>
+                    
             </div>
-        </nav>
+        </div>
     
+    
+                <div>
+                    <nav>
+                        <div class="link-picture">
+                            <div class="pumpkins-links">
+                                <a href="/oogie-boogie">
+                                    <img src="/pictures/citrouille1.PNG" alt="lien citrouille vers Oogie Boogie">
+                                </a>
+                            </div>
+                            <div class="pumpkins-links">
+                                <a href="/scary">
+                                    <img src="/pictures/citrouille2.PNG" alt="lien citrouille vers Scary place">
+                                </a>
+                            </div>
+                            <div class="pumpkins-links">
+                                <a href="/origami">
+                                    <img src="/pictures/citrouille3.PNG" alt="lien citrouille vers Origami">
+                                </a>
+                            </div>
+                            <div class="pumpkins-links">
+                                <a href="/christmas-town">
+                                    <img src="/pictures/citrouille4.PNG" alt="lien citrouille vers Christmas town">
+                                </a>
+                            </div>
+                            <a class="connect" href="/signup">se connecter</a>
 
-  
-</div>
-<script src="/js/home.js"></script>
+                        </div>
+                    </nav>
 
+
+
+                </div>
+            </div>
+                <script src="/js/home.js"></script>
+
+
+
+    
 </body>
 </html>

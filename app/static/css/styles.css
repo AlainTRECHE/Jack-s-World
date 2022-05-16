@@ -53,7 +53,32 @@ h1 {
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 
+.modal2 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
 .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: darkorange;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.modal-content2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -79,6 +104,20 @@ h1 {
     color: darkorange;
 }
 
+.close-button2 {float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: darkorange;
+}
+
+.close-button2:hover {
+    background-color: black;
+    color: darkorange;
+}
+
 .show-modal {
     opacity: 1;
     visibility: visible;
@@ -100,6 +139,20 @@ h1 {
     color: darkorange;
 }
 
+.trigger2 {
+    background-color: darkorange;
+    height: 3%;
+    width: 20%;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    margin-left: 80%;
+}
+
+.trigger2:hover {
+    background-color: black;
+    color: darkorange;
+}
+
 .connect {
     color: black;
     font-size: 1.3rem;
@@ -111,8 +164,7 @@ h1 {
     background-color: black;
     color: darkorange;
     font-size: 1rem;
-    
-}
+    }
 
 .submit:hover {
     background-color: red;
