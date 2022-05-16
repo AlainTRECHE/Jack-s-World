@@ -1,7 +1,7 @@
 const assert = require("assert");
 const bcrypt = require("bcrypt");
 
-const { User } = require("../models/user");
+const User = require("../models/user");
 
 const userController = {
     // SIGN UP => 2 ACTIONS : affichage du forulaire et soumission du formulaire
@@ -34,17 +34,14 @@ const userController = {
 
             await newUser.save();
 
-            res.redirect("/user/login");
+            res.redirect("/");
 
         } catch(err) {
             console.error(err);
             res.send(err.message);
         }
     },
-    // LOGIN -> 2 ACTIONS
-    getLogin: (req, res) => {
-        res.render("login");
-    },
+
     doLogin: async (req, res) => {
         // ETAPE 1 : Est-ce que j'ai user ?
         const user = await User.findOne({ where: { username: req.body.username }});
@@ -55,7 +52,7 @@ const userController = {
 
                 // ETAPE 3 je crée la session
                 req.session.user = user;
-
+               console.log("connecté");
                 res.redirect("/");
             } else {
                 res.send("Nope wrong username or password");

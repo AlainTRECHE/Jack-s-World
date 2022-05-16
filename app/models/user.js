@@ -23,7 +23,8 @@ User.init({
     }
 }, {
 
-    sequelize
+    sequelize,
+    tableName: "user"
 });
 
 

@@ -14,7 +14,7 @@ const userController = require("./controllers/userController");
 router.get("/", mainController.index);
 router.get("/scary", placeController.mainRoad);
 router.get("/scary/scary-faces", scaryFacesController.scaryFaces);
-router.get("/oogie-boogie", boogieController.getPath); 
+router.get("/oogie-boogie", boogieController.getPath);
 router.get("/oogie-boogie/421", diceController.getPath);
 router.get("/origami", origamiController.getPath);
 router.get("/christmas-town", christmasContoller.getPath);
@@ -24,10 +24,9 @@ router.get("/signup", userController.getSignup);
 router.post("/signup", userController.doSignup);
 
 // LOGIN
-router.get("/", userController.getLogin);
-router.post("/", userController.doLogin);
+router.post("/login", userController.doLogin);
 
-// LOGOUT  
+// LOGOUT
 router.get("/logout", userController.logout);
 
 // PROFILE

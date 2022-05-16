@@ -3,7 +3,7 @@ const trigger = document.querySelector(".trigger");
 const closeButton = document.querySelector(".close-button");
 const submit = document.querySelector(".submit");
 const signup = document.querySelector(".signup");
-const pumpkinsLinks = document.querySelector(".pumpkins-links")
+const pumpkinsLinks = document.querySelector(".pumpkins-links");
 
 function toggleModal() {
     modal.classList.toggle("show-modal");
