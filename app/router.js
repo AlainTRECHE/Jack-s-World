@@ -21,7 +21,6 @@ router.get("/christmas-town", christmasContoller.getPath);
 
 router.post("/signup", userController.doSignup);
 router.post("/login", userController.doLogin);
-
 router.get("/logout", userController.logout);
 
 
