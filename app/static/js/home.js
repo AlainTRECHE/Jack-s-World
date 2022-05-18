@@ -29,3 +29,4 @@ closeButton2.addEventListener("click", toggleModal2);
 window.addEventListener("click", windowOnClick);
 submit.addEventListener("click",toggleModal, toggleModal2);
 pumpkinsLinks.addEventListener("clik",toggleModal, toggleModal2);
+
