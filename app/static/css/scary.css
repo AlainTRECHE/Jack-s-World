@@ -23,3 +23,12 @@ img {
     padding-left: 80%;
     padding-top: 15%;
 }
+
+.link-duck:hover {
+    box-shadow: 10px 5px 5px yellow;
+}
+
+.duck-picture {
+    width: 2%;
+    height: 10%;
+}
