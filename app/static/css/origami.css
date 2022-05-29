@@ -9,10 +9,32 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100vw;
+    
 }
 
 h1 {
     font-size: 7rem;
     color: darkorange;
     padding-left: 5%;
+}
+
+.link {
+    font-size: 3rem;
+    color: darkorange;
+}
+
+.link:hover {
+    color: red;
+}
+ .link-spider {
+     padding-left: 80%;
+}
+
+ .link-pumpkin {
+     padding-left: 3%;
+}
+
+ .link-ghost {
+     padding-left: 20%;
+     padding-top: 17%;
 }

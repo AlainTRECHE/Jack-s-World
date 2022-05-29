@@ -1,0 +1,15 @@
+@font-face {
+    font-family:"Nightmare Before Christmas";
+    src: url("./../fonts/Nightmare_Before_Christmas.ttf") format("truetype");
+}
+
+body {
+    font-family:"Nightmare Before Christmas" ;
+    background-color: black;
+}
+
+h1 {
+    color: darkorange;
+    text-align: center;
+    font-size: 4rem;
+}

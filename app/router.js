@@ -17,7 +17,11 @@ router.get("/scary/scary-faces", scaryFacesController.scaryFaces);
 router.get("/oogie-boogie", boogieController.getPath);
 router.get("/oogie-boogie/421", diceController.getPath);
 router.get("/origami", origamiController.getPath);
+router.get("/origami/pumpkin",origamiController.pumpkinPath);
+router.get("/origami/ghost", origamiController.ghostPath);
+router.get("/origami/spider", origamiController.spiderPath);
 router.get("/christmas-town", christmasContoller.getPath);
+
 
 router.post("/signup", userController.doSignup);
 router.post("/login", userController.doLogin);
