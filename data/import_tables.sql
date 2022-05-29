@@ -10,7 +10,7 @@ CREATE TABLE "character" (
     "updated_at" timestamptz
     );
 
- CREATE TABLE "user" (
+CREATE TABLE "user" (
 
    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    "username" text NOT NULL,
@@ -18,3 +18,11 @@ CREATE TABLE "character" (
    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
    "updated_at" timestamptz
     );
+
+CREATE TABLE "origami" (
+
+  "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+  "picture" text NOT NULL,
+  "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" timestamptz
+);

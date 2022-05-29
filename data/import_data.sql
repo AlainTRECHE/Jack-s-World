@@ -18,3 +18,14 @@ INSERT INTO "character" ("name","description","picture") VALUES
 ('Sax Player', 'Le Sax Player et son groupe mettent une ambiance funeste dans halloween town.','cardSaxPlayer.PNG'),
 ('Vampire', 'Le vampire a remporte le prix pour le sang draine en une seule soiree et traine avec sa bande vampires','cardVampire.PNG'),
 ('Wolfman', 'C"est le loup garou de halloween town.','cardWolfman.PNG');
+
+INSERT INTO "origami" ("picture") VALUES
+('origami-citrouille1.PNG'),('origami-citrouille2.PNG'),('origami-citrouille3.PNG'),('origami-citrouille4.PNG'),('origami-citrouille5.PNG'),
+('origami-citrouille6.PNG'),('origami-citrouille7.PNG'),('origami-citrouille8.PNG'),('origami-citrouille9.PNG'),('origami-citrouille10.PNG'),
+('origami-fantome1.PNG'),('origami-fantome2.PNG'),('origami-fantome3.PNG'),('origami-fantome4.PNG'),('origami-fantome5.PNG'),
+('origami-fantome6.PNG'),('origami-fantome7.PNG'),('origami-fantome8.PNG'),('origami-fantome9.PNG'),('origami-fantome10.PNG'),
+('origami-fantome11.PNG'),('origami-fantome12.PNG'),('origami-fantome13.PNG'),('origami-fantome14.PNG'),('origami-fantome15.PNG'),
+('origami-fantome16.PNG'),('origami-fantome17.PNG'),('origami-fantome18.PNG'),('origami-fantome19.PNG'),('origami-fantome20.PNG'),
+('origami-fantome21.PNG'),('origami-fantome22.PNG'),('origami-fantome23.PNG'),
+('origami-spider1.PNG'),('origami-spider2.PNG'),('origami-spider3.PNG'),('origami-spider4.PNG'),('origami-spider5.PNG'),
+('origami-spider6.PNG'),('origami-spider7.PNG'),('origami-spider8.PNG'),('origami-spider9.PNG'),('origami-spider10.PNG');
