@@ -1,5 +1,3 @@
-
-
 //je recupere un objet qui contient toutes les cartes des personnages
 const cardsElements = document.querySelectorAll(".character");
 
